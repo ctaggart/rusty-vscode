@@ -1,0 +1,15 @@
+
+.bash_history
+/root/.cache
+/root/*fakexinerama
+root/.Xauthority
+/root/.xpra
+/root/.xsession-errors
+/root/*.deb
+/root/*.json
+/root/*.db
+/root/*.ini
+/root/*.sqlite
+/root/.mozilla
+/root/.pki/
+/root/profile/

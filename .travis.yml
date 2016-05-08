@@ -1,0 +1,30 @@
+# https://github.com/ctaggart/rusty-vscode
+# https://travis-ci.org/ctaggart/rusty-vscode
+
+# Ubuntu Trusty 14.04 with Docker
+# https://docs.travis-ci.com/user/ci-environment/
+# https://docs.travis-ci.com/user/docker/
+sudo: required
+dist: trusty
+services:
+  - docker
+
+env:
+  global:
+    - VERSION=0.0.0
+    - if [ ! -z "$TRAVIS_TAG" ]; then VERSION=$TRAVIS_TAG; fi
+    # travis encrypt DOCKER_HUB_EMAIL=a DOCKER_HUB_USERNAME=b DOCKER_HUB_PASSWORD=c
+    - secure: "ac8+wKVPO7F9VA83j7eOZKeR9N3UscVIubwqpZmULvJ9GXfMX68731OuKZh6ssOcfmtl+P7iWkzcZaPYo0sBBzWcS25+wrZdkfwGfMtzpe24ujo9UMYX2KY6U3xE7NyTGgydCyhr8dxZtmGNuhCmOOGqqBCFIL0qiNtPZ4C8HjdyqBFGWXjW2Ve8PvddjoNiHI0nx3/ZfhTM2SpXt1whjJ0PnEGtmvgAQLJumCGzpP+lUj32nb7iZvGT5aWCDLlqk0cwZPQHVSo8enjtBozZGxThbmgT/8lUvtbO2JjGUYRfyni56fnxCfahDYmNDjsq53Hb5QIjD7JnG9D6bEBpr20Eikl2UfPVbGMp32JbHPcJkUpTScemEDUEkUAD3rcoR/8B/6usNX/Gxy2lfULWsXcEgiTcu4PrfSV7LFZky2Wu0sxOFZstC7jp8PKtB4cb5KBI4IL27evKsaeYx5Ad6MH0VF6BI6WnMFQI39r0iZr60jgataZ12p3qQJH8IS4KxwYhrlLZaYos0sifEzpRgmO5/5G9pN5hoNg6vMbkpZvfXyGwDWXFfIGvRTLjUM0d1AHxKlEjqAsFzLnQ/+mr7TpqLP0a+Weyc5iAXJ+yU4O/ZaaFJjod56osU+sQqs3WixiqMV3nr8NzbA09IwQ1c+Z5xwjDeqt1V5YNQ077O8U="
+
+install: true
+
+script:
+  - docker build -t ctaggart/rusty-vscode:$VERSION .
+
+after_success:
+  - if [ ! -z "$TRAVIS_TAG" ]; then
+      docker login --email=$DOCKER_HUB_EMAIL --username=$DOCKER_HUB_USERNAME --password=$DOCKER_HUB_PASSWORD;
+      docker push ctaggart/rusty-vscode:$VERSION;
+      docker tag -f ctaggart/rusty-vscode:$VERSION ctaggart/rusty-vscode:latest;
+      docker push ctaggart/rusty-vscode:latest;
+    fi
