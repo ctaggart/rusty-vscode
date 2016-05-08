@@ -12,7 +12,7 @@ RUN cd /root \
   && ./install-xpra.sh \
   && ./install-vscode.sh \
   && cp install-vscode-*.sh /home/vscode/ \
-  && cp xpra-start.sh /home/vscode/ \
+  && cp start-xpra.sh /home/vscode/ \
   && chown vscode:vscode /home/vscode/*.sh \
   && su - vscode -c /home/vscode/install-vscode-RustyCode.sh
 
