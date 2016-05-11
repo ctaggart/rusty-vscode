@@ -8,6 +8,8 @@ sudo: required
 dist: trusty
 services:
   - docker
+cache:
+  - apt
 
 env:
   global:
