@@ -8,4 +8,4 @@ fi
 if [ "$XPRAPORT" = "" ]; then
     export XPRAPORT=6100
 fi
-xpra start $DISPLAY --bind-tcp=0.0.0.0:$XPRAPORT $XPRASTART
+xpra start $DISPLAY --bind-tcp=0.0.0.0:$XPRAPORT --pulseaudio=no $XPRASTART
