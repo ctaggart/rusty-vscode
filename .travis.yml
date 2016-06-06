@@ -25,6 +25,7 @@ after_success:
   - if [ ! -z "$TRAVIS_TAG" ]; then
       docker login --email=$DOCKER_HUB_EMAIL --username=$DOCKER_HUB_USERNAME --password=$DOCKER_HUB_PASSWORD;
       docker push ctaggart/rusty-vscode:$VERSION;
+    fi
       # docker tag -f ctaggart/rusty-vscode:$VERSION ctaggart/rusty-vscode:latest;
       # docker push ctaggart/rusty-vscode:latest;
-    fi
+    # fi
