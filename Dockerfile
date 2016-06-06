@@ -14,7 +14,7 @@ RUN cd /root \
   && cp install-vscode-*.sh /home/vscode/ \
   && cp start-xpra.sh /home/vscode/ \
   && chown vscode:vscode /home/vscode/*.sh \
-  && su - vscode -c /home/vscode/install-vscode-RustyCode.sh
+  && su - vscode -c /home/vscode/install-vscode-RustyCode.sh \
   && su - vscode -c /home/vscode/install-vscode-debug.sh
 
 WORKDIR /root
