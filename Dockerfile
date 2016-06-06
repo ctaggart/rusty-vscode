@@ -8,7 +8,6 @@ FROM jimmycuadra/rust:latest
 COPY root /root
 
 RUN cd /root \
-  && apt-get update \
   && ./install-user.sh \
   && ./install-xpra.sh \
   && ./install-vscode.sh \
