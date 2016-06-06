@@ -2,7 +2,7 @@
 dir=$(cd `dirname "$0"` && pwd)
 # publisher extension version
 # https://marketplace.visualstudio.com/items?itemName=saviorisdead.RustyCode
-$dir/install-vscode-extension.sh saviorisdead RustyCode 0.14.3
+$dir/install-vscode-extension.sh saviorisdead RustyCode 0.14.6
 cargo install racer
 cargo install rustfmt
 echo 'export PATH=~/.cargo/bin:$PATH' >> ~/.bash_profile
