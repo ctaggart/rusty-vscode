@@ -13,9 +13,10 @@ RUN cd /root \
   && ./install-vscode.sh \
   && cp install-vscode-*.sh /home/vscode/ \
   && cp start-xpra.sh /home/vscode/ \
+  && cp start-ssh.sh /home/vscode/ \
   && chown vscode:vscode /home/vscode/*.sh \
   && su - vscode -c /home/vscode/install-vscode-RustyCode.sh \
   && su - vscode -c /home/vscode/install-vscode-debug.sh
 
 WORKDIR /root
-CMD service ssh start
+CMD su - vscode -c /home/vscode/start-ssh.sh
