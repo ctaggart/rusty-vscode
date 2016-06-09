@@ -9,7 +9,7 @@ COPY root /root
 
 RUN cd /root \
   && ./install-user.sh \
-  && ./install-xpra.sh \
+  && ./install-x2go.sh \
   && ./install-vscode.sh \
   && cp install-vscode-*.sh /home/vscode/ \
   && cp start-xpra.sh /home/vscode/ \
@@ -18,4 +18,4 @@ RUN cd /root \
   && su - vscode -c /home/vscode/install-vscode-debug.sh
 
 WORKDIR /root
-CMD su - vscode
+CMD service ssh start
