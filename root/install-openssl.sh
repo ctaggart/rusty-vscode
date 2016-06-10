@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 # https://packages.debian.org/jessie/libssl-dev 
 export DEBIAN_FRONTEND=noninteractive
 apt-get install -y libssl-dev

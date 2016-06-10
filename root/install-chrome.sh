@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 # https://www.google.com/linuxrepositories/
 # https://wiki.debian.org/UnofficialRepositories
 curl https://dl.google.com/linux/linux_signing_key.pub | apt-key add -

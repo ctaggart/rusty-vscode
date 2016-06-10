@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 # start the xpra server
 # source this script if you need DISPLAY set `. start-xpra.sh`
 # $XPRASTART is intended for extra setting like `--dpi=108`

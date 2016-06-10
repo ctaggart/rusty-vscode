@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 dir=$(cd `dirname "$0"` && pwd)
 # publisher extension version
 # https://marketplace.visualstudio.com/items?itemName=saviorisdead.RustyCode
