@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 # Create ssh "client" key
 # http://stackoverflow.com/a/20977657
 

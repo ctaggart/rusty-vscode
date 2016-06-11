@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 # installs x2go, lxde, & lightdm for debian 8 jessie
 # http://wiki.x2go.org/doku.php/doc:installation:x2goserver
 export DEBIAN_FRONTEND=noninteractive
